@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package order;
+
+service OrderService {
+  // Unary RPC: tạo đơn hàng mới
+  rpc CreateOrder (CreateOrderRequest) returns (Order);
+
+  // Server Streaming RPC: stream tất cả đơn hàng của 1 user
+  rpc ListOrdersByUser (ListOrdersRequest) returns (stream Order);
+}
+
+message CreateOrderRequest {
+  string user_id = 1;
+  string product_id = 2;
+  int32 quantity = 3;
+}
+
+message ListOrdersRequest {
+  string user_id = 1;
+}
+
+message Order {
+  string id = 1;
+  string user_id = 2;
+  string product_id = 3;
+  int32 quantity = 4;
+  double total_price = 5;
+  string status = 6;
+  string created_at = 7;
+}

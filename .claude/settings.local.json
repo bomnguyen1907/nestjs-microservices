@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "PowerShell(cd \"d:\\\\software\\\\Seminar\\\\nestjs-microservices\\\\product-service\"; $out = npx tsc 2>&1; Write-Output \"EXIT: $LASTEXITCODE\"; $out | Select-Object -First 30)"
+    ]
+  }
+}
